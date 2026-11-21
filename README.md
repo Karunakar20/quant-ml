@@ -1,6 +1,6 @@
 ## Project Folder Structure
 
-BharatQuant ML follows a **Modular Monolith Architecture** to maintain a clean separation of concerns, improve maintainability, and support future scalability.
+Quant ML follows a **Modular Monolith Architecture** to maintain a clean separation of concerns, improve maintainability, and support future scalability.
 
 Instead of introducing microservices at the initial stage, the application is organized into independent modules with clearly defined responsibilities. This approach keeps development and deployment simple while allowing individual components to evolve independently.
 
