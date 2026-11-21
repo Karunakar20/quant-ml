@@ -1,0 +1,1 @@
+"""FYERS market data provider."""
