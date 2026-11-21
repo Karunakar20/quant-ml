@@ -1,0 +1,30 @@
+
+# Data processing
+pandas
+numpy
+
+# Market data
+yfinance==1.2.0
+requests
+
+# Database
+SQLAlchemy
+psycopg2-binary
+alembic
+
+# Configuration
+pydantic
+pydantic-settings
+python-dotenv
+
+# Backend
+fastapi
+uvicorn[standard]
+
+# Machine learning (Phase 2)
+scikit-learn
+xgboost
+
+# Testing
+pytest
+pytest-cov

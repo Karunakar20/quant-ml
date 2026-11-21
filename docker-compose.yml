@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: quant_ml_postgres
+    environment:
+      POSTGRES_DB: quant_ml
+      POSTGRES_USER: quant_ml
+      POSTGRES_PASSWORD: quant_ml_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quant_ml -d quant_ml"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: quant_ml_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+    environment:
+      DATABASE_URL: postgresql://quant_ml:quant_ml_password@postgres:5432/quant_ml
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
