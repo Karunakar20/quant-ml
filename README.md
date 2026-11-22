@@ -7,7 +7,7 @@ Instead of introducing microservices at the initial stage, the application is or
 ### Directory Structure
 
 ```text
-bharatquant-ml/
+quant-ml/
 │
 ├── app/
 │   ├── main.py
