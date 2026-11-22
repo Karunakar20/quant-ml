@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 
-from app.routers import pipline
+from app.routers.pipline import router as pipeline_router
 from app.core.logging import configure_logging
 
 configure_logging()
@@ -26,7 +26,4 @@ def health_check():
     return {"status": "healthy"}
 
 
-app.include_router(
-    pipline,
-    prefix="/api/v1",
-)
+app.include_router(pipeline_router, prefix="/api/v1")

@@ -25,3 +25,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# PYTHONPATH=. python app/tests/test_yahoo_connection.py
+

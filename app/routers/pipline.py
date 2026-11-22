@@ -70,6 +70,9 @@ def run_ingestion(
         newly_inserted,
     )
 
+    # return True
+
+
     # Read IDs and symbols before processing individual stocks.
     stock_rows = db.execute(
         select(Stock.id, Stock.symbol).where(

@@ -9,15 +9,13 @@ requests
 
 # Database
 SQLAlchemy
-# psycopg2-binary
-# alembic
-psycopg
+psycopg[binary]
+alembic
 
 # Configuration
 pydantic
 pydantic-settings
 python-dotenv
-
 
 # Backend
 fastapi

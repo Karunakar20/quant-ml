@@ -21,6 +21,7 @@ from app.data.validation import validate_candles
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+print(PROJECT_ROOT)
 
 DEFAULT_STOCK_CSV = (PROJECT_ROOT / "scripts" / "nifty50_symbols.csv")
 
@@ -166,6 +167,10 @@ def save_candles(
             "volume": int(row["volume"]),
         })
 
+    print('---------------')
+    print(records)
+    print('---------------')
+
     stmt = insert(HistoricalCandle).values(records)
 
     stmt = stmt.on_conflict_do_update(
@@ -179,6 +184,9 @@ def save_candles(
         },
     )
 
+    print('===================================')
+    print(stmt)
+    print('===================================')
     db.execute(stmt)
     db.commit()
 
