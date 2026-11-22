@@ -88,6 +88,21 @@ quant-ml/
 ├── requirements.txt
 └── README.md
 ```
+## Logging
+
+Application logs are written to `logs/quant_ml.log` and also printed to the
+console. The file rotates at 10 MB and retains five backups. HTTP request
+start/completion, ingestion stages, database setup, and application errors are
+included. Docker Compose persists the same log directory on the host.
+
+Configure logging with these environment variables:
+
+- `LOG_LEVEL` (default: `INFO`)
+- `LOG_FILE` (default: `logs/quant_ml.log`; relative paths resolve from the project root)
+- `LOG_MAX_BYTES` (default: `10485760`)
+- `LOG_BACKUP_COUNT` (default: `5`)
+- `SQL_ECHO` (default: `false`; set to `true` to include SQL statements; parameters are hidden)
+
 
 ## Eight-Week Implementation Roadmap
 

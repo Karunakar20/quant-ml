@@ -1,10 +1,12 @@
 
+import logging
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from app.core.config import settings
 
-print(settings.DATABASE_URL)
+logger = logging.getLogger(__name__)
 
 
 engine = create_engine(
@@ -12,8 +14,11 @@ engine = create_engine(
     pool_pre_ping=True,
     pool_size=10,
     max_overflow=20,
-    echo=settings.DEBUG,
+    echo=settings.SQL_ECHO,
+    hide_parameters=True,
 )
+
+logger.info("Database engine configured")
 
 SessionLocal = sessionmaker(
     bind=engine,
@@ -28,9 +33,11 @@ class Base(DeclarativeBase):
 
 def get_db():
     db = SessionLocal()
+    logger.debug("Database session opened")
 
     try:
         yield db
 
     finally:
         db.close()
+        logger.debug("Database session closed")

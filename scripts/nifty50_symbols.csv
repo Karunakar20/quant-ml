@@ -1,51 +1,51 @@
 symbol,company_name,exchange
-RELIANCE,Reliance Industries,NSE
-TCS,Tata Consultancy Services,NSE
-HDFCBANK,HDFC Bank,NSE
-ICICIBANK,ICICI Bank,NSE
-INFY,Infosys,NSE
-ITC,ITC Limited,NSE
-SBIN,State Bank of India,NSE
-BHARTIARTL,Bharti Airtel,NSE
-LT,Larsen and Toubro,NSE
-HINDUNILVR,Hindustan Unilever,NSE
-AXISBANK,Axis Bank,NSE
-KOTAKBANK,Kotak Mahindra Bank,NSE
-BAJFINANCE,Bajaj Finance,NSE
-MARUTI,Maruti Suzuki,NSE
-SUNPHARMA,Sun Pharmaceutical,NSE
-TITAN,Titan Company,NSE
-TATAMOTORS,Tata Motors,NSE
-NTPC,NTPC,NSE
-POWERGRID,Power Grid Corporation,NSE
-M&M,Mahindra and Mahindra,NSE
-TATASTEEL,Tata Steel,NSE
-ONGC,Oil and Natural Gas Corporation,NSE
-ULTRACEMCO,UltraTech Cement,NSE
-ASIANPAINT,Asian Paints,NSE
-NESTLEIND,Nestle India,NSE
-HCLTECH,HCL Technologies,NSE
-WIPRO,Wipro,NSE
-TECHM,Tech Mahindra,NSE
-JSWSTEEL,JSW Steel,NSE
-COALINDIA,Coal India,NSE
-ADANIPORTS,Adani Ports,NSE
-ADANIENT,Adani Enterprises,NSE
-BAJAJFINSV,Bajaj Finserv,NSE
-GRASIM,Grasim Industries,NSE
-DRREDDY,Dr Reddys Laboratories,NSE
-CIPLA,Cipla,NSE
-DIVISLAB,Divis Laboratories,NSE
-EICHERMOT,Eicher Motors,NSE
-HEROMOTOCO,Hero MotoCorp,NSE
-BRITANNIA,Britannia Industries,NSE
-APOLLOHOSP,Apollo Hospitals,NSE
-BPCL,Bharat Petroleum,NSE
-INDUSINDBK,IndusInd Bank,NSE
-SBILIFE,SBI Life Insurance,NSE
-HDFCLIFE,HDFC Life Insurance,NSE
-BAJAJ-AUTO,Bajaj Auto,NSE
-TRENT,Trent,NSE
-SHRIRAMFIN,Shriram Finance,NSE
-BEL,Bharat Electronics,NSE
-ETERNAL,Eternal,NSE
+RELIANCE.NS,Reliance Industries,NSE
+TCS.NS,Tata Consultancy Services,NSE
+HDFCBANK.NS,HDFC Bank,NSE
+ICICIBANK.NS,ICICI Bank,NSE
+INFY.NS,Infosys,NSE
+ITC.NS,ITC Limited,NSE
+SBIN.NS,State Bank of India,NSE
+BHARTIARTL.NS,Bharti Airtel,NSE
+LT.NS,Larsen and Toubro,NSE
+HINDUNILVR.NS,Hindustan Unilever,NSE
+AXISBANK.NS,Axis Bank,NSE
+KOTAKBANK.NS,Kotak Mahindra Bank,NSE
+BAJFINANCE.NS,Bajaj Finance,NSE
+MARUTI.NS,Maruti Suzuki,NSE
+SUNPHARMA.NS,Sun Pharmaceutical,NSE
+TITAN.NS,Titan Company,NSE
+TATAMOTORS.NS,Tata Motors,NSE
+NTPC.NS,NTPC,NSE
+POWERGRID.NS,Power Grid Corporation,NSE
+M&M.NS,Mahindra and Mahindra,NSE
+TATASTEEL.NS,Tata Steel,NSE
+ONGC.NS,Oil and Natural Gas Corporation,NSE
+ULTRACEMCO.NS,UltraTech Cement,NSE
+ASIANPAINT.NS,Asian Paints,NSE
+NESTLEIND.NS,Nestle India,NSE
+HCLTECH.NS,HCL Technologies,NSE
+WIPRO.NS,Wipro,NSE
+TECHM.NS,Tech Mahindra,NSE
+JSWSTEEL.NS,JSW Steel,NSE
+COALINDIA.NS,Coal India,NSE
+ADANIPORTS.NS,Adani Ports,NSE
+ADANIENT.NS,Adani Enterprises,NSE
+BAJAJFINSV.NS,Bajaj Finserv,NSE
+GRASIM.NS,Grasim Industries,NSE
+DRREDDY.NS,Dr Reddys Laboratories,NSE
+CIPLA.NS,Cipla,NSE
+DIVISLAB.NS,Divis Laboratories,NSE
+EICHERMOT.NS,Eicher Motors,NSE
+HEROMOTOCO.NS,Hero MotoCorp,NSE
+BRITANNIA.NS,Britannia Industries,NSE
+APOLLOHOSP.NS,Apollo Hospitals,NSE
+BPCL.NS,Bharat Petroleum,NSE
+INDUSINDBK.NS,IndusInd Bank,NSE
+SBILIFE.NS,SBI Life Insurance,NSE
+HDFCLIFE.NS,HDFC Life Insurance,NSE
+BAJAJ-AUTO.NS,Bajaj Auto,NSE
+TRENT.NS,Trent,NSE
+SHRIRAMFIN.NS,Shriram Finance,NSE
+BEL.NS,Bharat Electronics,NSE
+ETERNAL.NS,Eternal,NSE

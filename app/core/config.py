@@ -1,4 +1,3 @@
-from functools import lru_cache
 from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -16,6 +15,12 @@ class Settings(BaseSettings):
     DATA_RESOLUTION: str = "D"
     HISTORY_START_DATE: str = "2021-01-01"
     HISTORY_END_DATE: str | None = None
+
+    LOG_LEVEL: str = "INFO"
+    LOG_FILE: Path = PROJECT_ROOT / "logs" / "quant_ml.log"
+    LOG_MAX_BYTES: int = 10 * 1024 * 1024
+    LOG_BACKUP_COUNT: int = 5
+    SQL_ECHO: bool = False
 
     model_config = SettingsConfigDict(
         env_file=PROJECT_ROOT / ".env",

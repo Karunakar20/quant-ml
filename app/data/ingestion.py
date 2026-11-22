@@ -21,7 +21,6 @@ from app.data.validation import validate_candles
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-print(PROJECT_ROOT)
 
 DEFAULT_STOCK_CSV = (PROJECT_ROOT / "scripts" / "nifty50_symbols.csv")
 
@@ -41,6 +40,7 @@ def load_stock_universe(
     """
 
     csv_path = Path(csv_path)
+    logger.info("Loading stock universe from %s", csv_path)
 
     if not csv_path.exists():
         raise FileNotFoundError(
@@ -146,6 +146,7 @@ def save_candles(
     """
 
     if df.empty:
+        logger.debug("Skipping empty candle upsert for stock_id=%s", stock_id)
         return 0
 
     records = []
@@ -167,9 +168,12 @@ def save_candles(
             "volume": int(row["volume"]),
         })
 
-    print('---------------')
-    print(records)
-    print('---------------')
+    logger.info(
+        "Upserting %s candles for stock_id=%s timeframe=%s",
+        len(records),
+        stock_id,
+        timeframe,
+    )
 
     stmt = insert(HistoricalCandle).values(records)
 
@@ -184,11 +188,9 @@ def save_candles(
         },
     )
 
-    print('===================================')
-    print(stmt)
-    print('===================================')
     db.execute(stmt)
     db.commit()
+    logger.info("Persisted %s candles for stock_id=%s", len(records), stock_id)
 
     return len(records)
 
@@ -227,6 +229,15 @@ def ingest_stock_history(
                 "start_date cannot be after end_date"
             )
 
+        logger.info(
+            "Starting history ingestion symbol=%s exchange=%s start=%s end=%s resolution=%s",
+            stock.symbol,
+            stock.exchange,
+            start_date,
+            end_date,
+            resolution,
+        )
+
         provider = YahooFinanceProvider()
 
         raw_df = provider.fetch_history(
@@ -235,8 +246,14 @@ def ingest_stock_history(
             end_date=end_date,
             interval="1d" if resolution == "D" else resolution,
         )
+        logger.info("%s: provider returned %s rows", stock.symbol, len(raw_df))
 
         validated_df = validate_candles(raw_df)
+        logger.info(
+            "%s: %s valid candles after validation",
+            stock.symbol,
+            len(validated_df),
+        )
 
         processed_count = save_candles(
             db=db,
