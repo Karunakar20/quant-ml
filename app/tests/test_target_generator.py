@@ -1,7 +1,7 @@
 
 import pandas as pd
 
-from features.target_generator import (
+from app.features.target_generator import (
     add_forward_targets,
 )
 
@@ -31,7 +31,9 @@ def test_daily_targets():
 
     assert result.loc[0, "target_1d"] == 1
 
-    assert result.loc[0, "forward_return_1d"] == 0.02
+    # assert result.loc[0, "forward_return_1d"] == 0.02
+    actual = result.loc[0, "forward_return_1d"]
+    assert round(float(actual), 12) == 0.02
 
     # No future price is available for the final row.
     assert pd.isna(result.iloc[-1]["target_1d"])

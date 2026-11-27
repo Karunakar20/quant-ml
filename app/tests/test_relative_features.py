@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 
-from features.relative_features import (
+from app.features.relative_features import (
     add_relative_features,
 )
 
