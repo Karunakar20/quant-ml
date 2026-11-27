@@ -21,6 +21,9 @@ python-dotenv
 fastapi
 uvicorn[standard]
 
+# Technical Indicators
+ta
+
 # Machine learning (Phase 2)
 # scikit-learn
 # xgboost
