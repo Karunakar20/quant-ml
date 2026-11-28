@@ -1,0 +1,176 @@
+{
+  "all/logistic_regression": {
+    "accuracy": 0.3727598566308244,
+    "balanced_accuracy": 0.3673643240067563,
+    "macro_f1": 0.3637639719833943,
+    "macro_precision": 0.3759956355701037,
+    "macro_recall": 0.3673643240067563,
+    "confusion_matrix": [
+      [
+        22,
+        42,
+        25
+      ],
+      [
+        20,
+        49,
+        36
+      ],
+      [
+        13,
+        39,
+        33
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "all/random_forest": {
+    "accuracy": 0.35842293906810035,
+    "balanced_accuracy": 0.36090181390908427,
+    "macro_f1": 0.3585644551473093,
+    "macro_precision": 0.36278674853281406,
+    "macro_recall": 0.36090181390908427,
+    "confusion_matrix": [
+      [
+        29,
+        30,
+        30
+      ],
+      [
+        27,
+        35,
+        43
+      ],
+      [
+        17,
+        32,
+        36
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "all/xgboost": {
+    "accuracy": 0.3763440860215054,
+    "balanced_accuracy": 0.3782267963365122,
+    "macro_f1": 0.37256316668081374,
+    "macro_precision": 0.37925696594427244,
+    "macro_recall": 0.3782267963365122,
+    "confusion_matrix": [
+      [
+        25,
+        25,
+        39
+      ],
+      [
+        27,
+        39,
+        39
+      ],
+      [
+        24,
+        20,
+        41
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "technical/logistic_regression": {
+    "accuracy": 0.4050179211469534,
+    "balanced_accuracy": 0.39914182901625067,
+    "macro_f1": 0.39703638809245695,
+    "macro_precision": 0.4111626447984585,
+    "macro_recall": 0.39914182901625067,
+    "confusion_matrix": [
+      [
+        25,
+        43,
+        21
+      ],
+      [
+        21,
+        53,
+        31
+      ],
+      [
+        11,
+        39,
+        35
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "technical/random_forest": {
+    "accuracy": 0.3655913978494624,
+    "balanced_accuracy": 0.3687449511639862,
+    "macro_f1": 0.36509917831161354,
+    "macro_precision": 0.36728395061728397,
+    "macro_recall": 0.3687449511639862,
+    "confusion_matrix": [
+      [
+        29,
+        30,
+        30
+      ],
+      [
+        30,
+        35,
+        40
+      ],
+      [
+        17,
+        30,
+        38
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "technical/xgboost": {
+    "accuracy": 0.3835125448028674,
+    "balanced_accuracy": 0.3859356476673066,
+    "macro_f1": 0.38247266342086367,
+    "macro_precision": 0.3899973003561454,
+    "macro_recall": 0.3859356476673066,
+    "confusion_matrix": [
+      [
+        30,
+        21,
+        38
+      ],
+      [
+        28,
+        38,
+        39
+      ],
+      [
+        23,
+        23,
+        39
+      ]
+    ],
+    "labels": [
+      -1,
+      0,
+      1
+    ]
+  }
+}

@@ -25,8 +25,8 @@ uvicorn[standard]
 ta
 
 # Machine learning (Phase 2)
-# scikit-learn
-# xgboost
+scikit-learn
+xgboost
 
 # Testing
 pytest
