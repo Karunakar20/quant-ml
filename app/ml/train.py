@@ -108,3 +108,56 @@ def train_regression_experiment(
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
     return results
+
+
+# Week 4: hyperparameter tuning helpers
+from sklearn.base import clone
+from sklearn.model_selection import ParameterGrid
+
+
+def tune_classifier(model, param_grid: dict, X_train, y_train, cv_splits: int = 3):
+    """Small expanding-window grid search for classification models."""
+    from sklearn.model_selection import TimeSeriesSplit, cross_val_score
+
+    best_score = float("-inf")
+    best_model = None
+    best_params = None
+
+    for params in ParameterGrid(param_grid):
+        candidate = clone(model).set_params(**params)
+        cv = TimeSeriesSplit(n_splits=cv_splits)
+        score = cross_val_score(candidate, X_train, y_train, cv=cv, scoring="balanced_accuracy", n_jobs=-1).mean()
+        if score > best_score:
+            best_score = float(score)
+            best_model = candidate
+            best_params = params
+
+    if best_model is None:
+        raise ValueError("No hyperparameter candidates were evaluated")
+
+    best_model.fit(X_train, y_train)
+    return best_model, best_params, best_score
+
+
+def tune_regressor(model, param_grid: dict, X_train, y_train, cv_splits: int = 3):
+    """Small expanding-window grid search for regression models."""
+    from sklearn.model_selection import TimeSeriesSplit, cross_val_score
+
+    best_score = float("-inf")
+    best_model = None
+    best_params = None
+
+    for params in ParameterGrid(param_grid):
+        candidate = clone(model).set_params(**params)
+        cv = TimeSeriesSplit(n_splits=cv_splits)
+        score = cross_val_score(candidate, X_train, y_train, cv=cv, scoring="neg_mean_absolute_error", n_jobs=-1).mean()
+        if score > best_score:
+            best_score = float(score)
+            best_model = candidate
+            best_params = params
+
+    if best_model is None:
+        raise ValueError("No hyperparameter candidates were evaluated")
+
+    best_model.fit(X_train, y_train)
+    return best_model, best_params, best_score

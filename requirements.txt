@@ -31,3 +31,6 @@ xgboost
 # Testing
 pytest
 pytest-cov
+
+# Week 4 model interpretability
+shap
